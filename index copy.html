@@ -1,166 +1,162 @@
 <!DOCTYPE html>
 <html lang=" ">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style.css">
-    <title>Guia de Atendimento</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css">
+  <title>Guia de Atendimento</title>
 </head>
+
 <body>
-    
-    <img src="logo.jpg" width="200px" height="auto">
-    
-    <hr>
-      <div>
-        <p class="title is-4" style="text-align: center; padding-bottom: 100px; padding-top: 50px;">Guia de Atendimento</p>
-      </div>
 
-      <div class="container">
-        <div class="columns">
-            <div class="column">
-              <p class="title is-5" >Beneficário</p>
-                <div class="field">
-                    <label class="label">Nome:</label>
-                    <div class="control">
-                      <input class="input" type="text" placeholder="João Lucas, Vinicius...">
-                    </div>
-                  </div>
-                  <div class="field">
-                    <label class="label">Contrato:</label>
-                    <div class="control">
-                      <input class="input" type="text" placeholder="1012">
-                    </div>
-                  </div>
-                  
-                  <div class="field">
-                    <label class="label">Tipo:</label>
-                    <div class="control">
-                      <div class="select">
-                        <select>
-                          <option>UNIMAIS</option>
-                          <option>UNIPLUS</option>
-                          <option>UNITOTAL</option>
-			  <option>UNIPRIME</option>
-                        </select>
-                      </div>
-                    </div>
-                  </div>
-                
-                  
-                  <div class="field is-grouped">
-                    <div class="control">
-                      
-                    </div>
-                    <div class="control">
-                      
-                    </div>
-                  </div>
+  <img src="logo.jpg" width="200px" height="auto">
 
+  <hr>
+  <div>
+    <p class="title is-4" style="text-align: center; padding-bottom: 100px; padding-top: 50px;">Guia de Atendimento</p>
+  </div>
 
-                  <p class="title is-5" >Contratado</p>
-                  <div class="field">
-                    <label class="label">MÉDICO:</label>
-                    <div class="control">
-                      <div class="select" id="medicos" onchange="handleSelectChange(event)">
-                        <select>
-                          <option value="0">----SELECIONE----</option>
-                          <option value="23.408.663/0001-45">CLINIK - PEDIATRA JULIANA PAIVA</option>
-                          <option value="23.408.663/0001-45">CLINIK - DEMATOLOGISTA DHIEGO RAMALHO</option>
-                          <option value="23.408.663/0001-45">CLINIK - CLINICA MÉDICA - IRVING PEREIRA</option>
-                          <option value="23.408.663/0001-45">CLINIK - ULTRASSONOGRAFIA - IRVING PEREIRA</option>
-                          <option value="23.834.924/0001-99">CEM - PSICOLOGA ANNECY INÁCIO</option>
-                          <option>ESPAÇO ACOLHER - PSICOLOGA ANA ALINE FONSECA</option>
-                          <option>ESPAÇO ACOLHER - PSICOLOGA ANA CLAUDIA</option>
-                          <option>ESPAÇO ACOLHER - PSICOLOGA ANGELICA DE SOUZA</option>
-                          <option>ESPAÇO ACOLHER - PSICOLOGA CLAUDIA COSTA</option>
-                          <option>ESPAÇO ACOLHER - PSICOLOGA FRANCIANE REZENDE</option>
-                          <option>ESPAÇO ACOLHER - PSICOLOGA JOELMA PEREIRA</option>
-                          <option>ESPAÇO ACOLHER - PSICOLOGA PATRICIA DINIZ</option>
-                          <option>ESPAÇO ACOLHER - PSICOLOGA MARINALVA LIMA</option>
-                          <option>ESPAÇO ACOLHER - PSIQUIATRA NIEDSON MEDEIROS</option>
-                          <option>ESPAÇO ACOLHER - FONOAUDIOLOGIA TEREZA CRISTINA FERRAZ</option>
-                          <option>ESPAÇO ACOLHER - NEUROPSICOPEDAGOGIA SUZYLENE QUEIROZ</option>
-                          <option>ESPAÇO ACOLHER - FISIOTERAPIA STEPHANIE VIEIRA</option>
-                          <option>ESPAÇO ACOLHER - NUTRICIONISTA TAMIRYS SILVA</option>
-                          <option>ESPAÇO ACOLHER - PODOLOGA CEIÇA PEREIRA</option>
-                          <option>ESPAÇO ACOLHER - PSICANALISTA JOSINEIDE VIEIRA</option>
-                          <option>ESPAÇO ACOLHER - PSICANALISTA GENILDA CARVALHO</option>
-                          <option>ESPAÇO ACOLHER - PSICANALISTA GENILDA CARVALHO</option>
-                          <option>CARDIOLOGISTA JAIFÁBIO LIMA</option>
-                          <option>CIRURGIÃO VASCULAR RANIERE SOARES</option>
-                          <option>GINECOLOGISTA LARISSA ARAUJO</option>
-                          <option>GINECOLOGISTA JOÃO GOMES DE MAGALHÃES</option>
-                          <option>GINECOLOGISTA JOSÉ FERDINANDO FEITOSO</option>
-                          <option>DR. KLEBER CANTARELLI P.ANDRADE</option>
-                          <option>MULTICLÍNICA & LABORATÓRIO SUZIANNE BRANDÃO</option>
-                          <option>TENCOR SERVIÇOS MÉDICOS</option>
-                        </select>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="field">
-                    <label class="label">CNPJ:</label>
-                    <div class="control">
-                      <input class="input" type="text" placeholder=1425125/0001-02" id="cnpj">
-                    </div>
-                  </div>
-                  <div class="field">
-                    <label class="label" id="cnpj">Endereço:</label>
-                    <div class="control">
-                      <input class="input" type="text" placeholder="Rua São Jorge, 15">
-                    </div>
-                  </div>
-
-            </div>
-            <div class="column">
-              <p class="title is-5" >Procedimentos</p>
-                <div class="field">
-                    <label class="label">Descrição:</label>
-                    <div class="control">
-                      <textarea class="textarea has-fixed-size" placeholder="Exame de sangue, consulta, cirurgia, implante..."></textarea>
-                    </div>
-                </div>
-                <div class="field">
-                  <label class="label">Observação:</label>
-                  <div class="control">
-                    <textarea class="textarea" placeholder="Algo a acrescentar"></textarea>
-                  </div>
-                </div>
-
-                <div class="content has-text-centered">
-                  <br>
-                  <br>
-                  <p>____________________________________________________</p>
-                  <p style="margin-top: auto;">Grupo Uniplan</p>
-                  <p>____________________________________________________</p>                  
-                  <p>Contratado</p>
-                  <br>
-                  <br>
-                  <button class="button is-primary" style="background-color: blue;" id="imprimirButton" onclick="imprimir()">Imprimir</button>
-                </div>
-            </div>
-           
-      </div>
-
-
-      
-      <footer class="footer" style="background-color: white; padding-bottom: 0px;">
-        <hr>
-        <div class="content has-text-centered" style="background-color: white;">
-          
-          <i href></i>
-          <p> <strong> GRUPO UNIPLAN </strong><br>
-            Av. Afonso Magalhães, 800 - São Cristóvão – Serra Talhada – PE <br>
-            <i class="fa-brands fa-whatsapp"></i> (87) 9 9615.8376  |  <i class="fa-solid fa-phone"></i>  0800 123 4600 <br>
-            
-            www.grupouniplan.com
-
-          </p>
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <p class="title is-5">Beneficário</p>
+        <div class="field">
+          <label class="label">Nome:</label>
+          <div class="control">
+            <input class="input" type="text" placeholder="João Lucas, Vinicius...">
+          </div>
         </div>
-      </footer>
-      <script src="script.js"></script>
+        <div class="field">
+          <label class="label">Contrato:</label>
+          <div class="control">
+            <input class="input" type="text" placeholder="1012">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Tipo:</label>
+          <div class="control">
+            <div class="select">
+              <select>
+                <option>UNIMAIS</option>
+                <option>UNIPLUS</option>
+                <option>UNITOTAL</option>
+                <option>UNIPRIME</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="field is-grouped">
+          <div class="control">
+
+          </div>
+          <div class="control">
+
+          </div>
+        </div>
+
+        <p class="title is-5">Contratado</p>
+        <label class="label">Nome:</label>
+        <div class="dropdown" id="selecaoDeMedico" style="width: 100%;">
+          <div class="dropdown-trigger" style="width: 100%;">
+            <button class="button" id="botaoDeMedico" style="width: 100%;" aria-haspopup="true"
+              aria-controls="dropdown-menu2">
+              <span>Selecione um contratado </span>
+              <span class="icon is-small">
+                <i class="fas fa-angle-down" aria-hidden="true"></i>
+              </span>
+            </button>
+          </div>
+          <div class="dropdown-menu" id="dropdown-menu2" role="menu" style="width: 100%;">
+            <div class="dropdown-content">
+              <div class="dropdown-item">
+                <div class="search">
+                  <i class="uil uil-search"></i>
+                  <input spellcheck="false" type="text" placeholder="Search">
+                </div>
+                <ul class="options"></ul>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">CNPJ:</label>
+          <div class="control">
+            <input class="input" type="text" placeholder=1425125/0001-02" id="cnpj">
+          </div>
+        </div>
+        <div class="field">
+          <label class="label" id="cnpj">Endereço:</label>
+          <div class="control">
+            <input class="input" type="text" placeholder="Rua São Jorge, 15">
+          </div>
+        </div>
+
+      </div>
+      <div class="column">
+        <p class="title is-5">Procedimentos</p>
+        <div class="field">
+          <label class="label">Descrição:</label>
+          <div class="control">
+            <textarea class="textarea" placeholder="Exame de sangue, consulta..."></textarea>
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Observação:</label>
+          <div class="control">
+            <textarea class="textarea" placeholder="Algo a acrescentar"></textarea>
+          </div>
+        </div>
+
+        <p class="title is-5">Atendente responsável</p>
+        <div class="field">
+          <label class="label">Nome:</label>
+          <div class="control">
+            <div class="select" id="atendente">
+              <select>
+                <option value="0">----SELECIONE----</option>
+                <option value="1">MARIA MIRELE NOGUEIRA BARBOSA</option>
+                <option value="2">LAIZE VIEIRA FERNANDES</option>
+                <option value="3">JAMYLLE RAIANE BENEVIDES</option>
+                <option value="0">JOAO LUCAS GOMES NOGUEIRA</option>
+                <option value="4">KAMYLA NATHALYA FEITOSA GODÊ</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        
+        
+      </div>
+
+    </div>
+
+
+
+    <footer class="footer" style="background-color: white; padding-bottom: 0px;">
+      <hr>
+      <div class="content has-text-centered" style="background-color: white;">
+
+        <i href></i>
+        <p> <strong> GRUPO UNIPLAN </strong><br>
+          Av. Afonso Magalhães, 800 - São Cristóvão – Serra Talhada – PE <br>
+          <i class="fa-brands fa-whatsapp"></i> (87) 9 9615.8376 | <i class="fa-solid fa-phone"></i> 0800 123 4600 <br>
+
+          www.grupouniplan.com
+
+        </p>
+      </div>
+    </footer>
+    <script src="script.js"></script>
 </body>
+
 </html>
