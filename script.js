@@ -24,7 +24,6 @@ function carregarCNPJeEndereco(event) {
 
 function imprimir() {
     botao = document.getElementById("imprimirButton")
-    botao.style.visibility = "hidden"
     window.print()
     botao.style.visibility = ""
 }

@@ -2,10 +2,6 @@ input {
     font-size: small;
 }
 
-.wrapper{
-  width: 370px;
-  margin: 85px auto 0;
-}
 .select-btn, li{
   display: flex;
   align-items: center;
@@ -116,6 +112,9 @@ hr {
 /* .title {
   text-align: center;
 } */
+.columns {
+  margin-left: 10px;
+}
 
 @media print {
   .container {
@@ -123,7 +122,7 @@ hr {
     padding-bottom: 0%;
     transform: scale(0.9);
   }
-  .botao {
+  #imprimirButton {
     display: none;
   }
   .assinatura {
