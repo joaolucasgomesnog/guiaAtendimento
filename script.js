@@ -1,3 +1,4 @@
+
 function handleSelectChange(event) {
     var selectElement = event.target
     var value = selectElement.value
@@ -71,7 +72,98 @@ searchInp.addEventListener("keyup", () => {
         let isSelected = data == selectBtn.firstElementChild.innerText ? "selected" : "";
         return `<li onclick="updateName(this)" class="${isSelected}">${data}</li>`;
     }).join("");
-    options.innerHTML = arr ? arr : `<p style="margin-top: 10px;">Oops! medico not found</p>`;
+    options.innerHTML = arr ? arr : `<p style="margin-top: 10px;">Ops! contratado não encontrado</p>`;
 });
 
 selectBtn.addEventListener("click", () => selecaoDeMedico.classList.toggle("is-active"));
+
+function getData() {
+
+    const date = new Date();
+
+    let dia= String(date.getDate()).padStart(2, '0');
+
+    let mes = String(date.getMonth()+1).padStart(2,"0");
+
+    let ano = date.getFullYear();
+
+
+    let dataLocal = `${ano}-${mes}-${dia}`;
+
+    const dataInput = document.getElementById('dataInput');
+    dataInput.value = dataLocal;
+}
+
+getData();
+
+
+
+
+
+
+
+// Esse é o código para o gatilho do popup de cadastro
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Functions to open and close a modal
+    function openModal($el) {
+      $el.classList.toggle('is-active');
+    }
+  
+    function closeModal($el) {
+      $el.classList.remove('is-active');
+    }
+  
+    function closeAllModals() {
+      (document.querySelectorAll('.modal') || []).forEach(($modal) => {
+        closeModal($modal);
+      });
+    }
+  
+    // Add a click event on buttons to open a specific modal
+    (document.querySelectorAll('.js-modal-trigger') || []).forEach(($trigger) => {
+      const modal = $trigger.dataset.target;
+      const $target = document.querySelector('.modal');
+  
+      $trigger.addEventListener('click', () => {
+        openModal($target);
+      });
+    });
+  
+    // Add a click event on various child elements to close the parent modal
+    (document.querySelectorAll('.modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button, button') || []).forEach(($close) => {
+      const $target = $close.closest('.modal');
+  
+      $close.addEventListener('click', () => {
+        closeModal($target);
+      });
+    });
+  
+    // Add a keyboard event to close all modals
+    document.addEventListener('keydown', (event) => {
+      const e = event || window.event;
+  
+      if (e.keyCode === 27) { // Escape key
+        closeAllModals();
+      }
+      if (e.keyCode === 13) { // Escape key
+        closeAllModals();
+      }
+    });
+  });
+
+  
+// Adicionando novos contratados (por enquanto não está funcionando 100% porque preciso armazenar os dados ainda)
+function adicionarContratado() {
+    let novoNome = document.querySelector('#novoNome').value.toUpperCase();
+    let novoCnpj = document.querySelector('#novoCnpj').value;
+    let novoEndereco = document.querySelector('#novoEndereco').value;
+
+    let nome = document.querySelector('#contratado');
+    let cnpj = document.querySelector('#cnpj');
+    let endereco = document.querySelector('#endereco');
+
+    nome.innerHTML = novoNome;
+    cnpj.value = novoCnpj;
+    endereco.value = novoEndereco;
+}

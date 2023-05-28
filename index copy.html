@@ -6,23 +6,20 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="style.css">
   <title>Guia de Atendimento</title>
 </head>
 
 <body>
+  <header>
+    <img src="logo.jpg" width="200px" height="auto">
+    <hr>
+  </header>
 
-  <img src="logo.jpg" width="200px" height="auto">
-
-  <hr>
-  <div>
-    <p class="title is-4" style="text-align: center; padding-bottom: 100px; padding-top: 50px;">Guia de Atendimento</p>
-  </div>
 
   <div class="container">
+    <p class="title is-5" style="text-align: center; padding-bottom: 50px; padding-top: 20px;">Guia de Atendimento</p>
     <div class="columns">
       <div class="column">
         <p class="title is-5">Beneficário</p>
@@ -67,9 +64,9 @@
         <label class="label">Nome:</label>
         <div class="dropdown" id="selecaoDeMedico" style="width: 100%;">
           <div class="dropdown-trigger" style="width: 100%;">
-            <button class="button" id="botaoDeMedico" style="width: 100%;" aria-haspopup="true"
+            <button class="button" id="botaoDeMedico" style="width: 100%; display: flex;" aria-haspopup="true"
               aria-controls="dropdown-menu2">
-              <span>Selecione um contratado </span>
+              <span id="contratado">Selecione um contratado </span>
               <span class="icon is-small">
                 <i class="fas fa-angle-down" aria-hidden="true"></i>
               </span>
@@ -78,9 +75,11 @@
           <div class="dropdown-menu" id="dropdown-menu2" role="menu" style="width: 100%;">
             <div class="dropdown-content">
               <div class="dropdown-item">
-                <div class="search"
-                  <i class="uil uil-search"></i>
-                  <input spellcheck="false" type="text" placeholder="Search">
+                <div class="search" style="display: flex;">
+                  <input class="input" spellcheck="false" type="text" placeholder="Search">
+                  <button class="button js-modal-trigger" style="margin-left: 5px;">
+                      <i class="fa-solid fa-plus" style="color: #000000;"></i>
+                  </button>
                 </div>
                 <ul class="options"></ul>
 
@@ -96,9 +95,9 @@
           </div>
         </div>
         <div class="field">
-          <label class="label" id="cnpj">Endereço:</label>
+          <label class="label">Endereço:</label>
           <div class="control">
-            <input class="input" type="text" placeholder="Rua São Jorge, 15">
+            <input class="input" type="text" placeholder="Rua São Jorge, 15" id="endereco">
           </div>
         </div>
 
@@ -118,12 +117,14 @@
           </div>
         </div>
 
-        <p class="title is-5">Atendente responsável</p>
+        <p class="title is-5">Emissão</p>
         <div class="field">
-          <label class="label">Nome:</label>
-          <div class="control">
-            <div class="select" id="atendente">
-              <select>
+          <label class="label">Data:</label>
+          <input class="input" id="dataInput" type="date" placeholder="Text input" style="width: 50%;">
+          <label class="label">Atendente:</label>
+          <div class="control" style="display: flex; width: 100%;">
+            <div class="select" id="atendente" style="width: 100%;">
+              <select style="width: 100%;">
                 <option value="0">----SELECIONE----</option>
                 <option value="1">MARIA MIRELE NOGUEIRA BARBOSA</option>
                 <option value="2">LAIZE VIEIRA FERNANDES</option>
@@ -132,43 +133,81 @@
                 <option value="4">KAMYLA NATHALYA FEITOSA GODÊ</option>
               </select>
             </div>
+            <button class="button is-primary" style="background-color: blue;" id="imprimirButton" onclick="imprimir()">Imprimir</button>
           </div>
         </div>
-        <div class="assinatura has-text-centered">
-          <br>
-          <br>
-          <p>____________________________________________________</p>
-          <p style="margin-top: auto;">Grupo Uniplan</p>
-          <br>
-          <p>____________________________________________________</p>                  
-          <p>Contratado</p>
-          <br>
-          <br>
-          <button class="button is-primary" style="background-color: blue;" id="imprimirButton" onclick="imprimir()">Imprimir</button>
-        </div>
+        
         
         
       </div>
+    </div>
+    <div class="assinatura has-text-centered">
+      <br>
+      <br>
+      <p>____________________________________________________</p>
+      <p style="margin-top: auto;">Grupo Uniplan</p>
+      <br>
+      <p>____________________________________________________</p>                  
+      <p>Contratado</p>
+      <br>
+      <br>
+    </div>
+  </div>
+  
+  <!-- Aqui é o nosso popup de cadastro -->
+  <div class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+      <form class="box" style="background-color: white;" onsubmit="return false">
+        <div class="field">
+          <label class="label">Nome:</label>
+          <div class="control">
+            <input class="input" type="text"  id="novoNome">
+          </div>
+        </div>
+      
+        <div class="field">
+          <label class="label">CNPJ:</label>
+          <div class="control">
+            <input class="input" type="text" id="novoCnpj">
+          </div>
+        </div>
 
+        <div class="field">
+          <label class="label">Endereço:</label>
+          <div class="control">
+            <input class="input" type="text" id="novoEndereco">
+          </div>
+        </div>
+        <span style="display: flex; justify-content: flex-end;">
+          <button class="button is-primary is-right" onclick="adicionarContratado()">Adicionar</button>
+        </span>
+      </form> 
+    </div>
+    <button class="modal-close is-large" aria-label="close"></button>
+  </div>
+
+
+
+  <footer style="background-color: white;">
+    <hr>
+    <div class="informacoes has-text-centered">
+
+      <i href></i>
+      <p> <strong> GRUPO UNIPLAN </strong><br>
+        Av. Afonso Magalhães, 800 - São Cristóvão – Serra Talhada – PE <br>
+        <i class="fa-brands fa-whatsapp"></i> (87) 9 9615.8376 | <i class="fa-solid fa-phone"></i> 0800 123 4600 <br>
+
+        www.grupouniplan.com
+
+      </p>
     </div>
 
 
 
-    <footer class="footer" style="background-color: white; padding-bottom: 0px;">
-      <hr>
-      <div class="informacoes has-text-centered" style="background-color: white;">
 
-        <i href></i>
-        <p> <strong> GRUPO UNIPLAN </strong><br>
-          Av. Afonso Magalhães, 800 - São Cristóvão – Serra Talhada – PE <br>
-          <i class="fa-brands fa-whatsapp"></i> (87) 9 9615.8376 | <i class="fa-solid fa-phone"></i> 0800 123 4600 <br>
-
-          www.grupouniplan.com
-
-        </p>
-      </div>
-    </footer>
-    <script src="script.js"></script>
+  </footer>
+  <script src="script.js"></script>
 </body>
 
 </html>
