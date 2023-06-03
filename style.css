@@ -115,6 +115,13 @@ hr {
 .columns {
   margin-left: 10px;
 }
+.watermark {
+  position:fixed;
+  opacity: 5%;
+  margin-top: 200px;
+  z-index: 2;
+  display: none;
+}
 
 @media print {
   .container {
@@ -126,6 +133,9 @@ hr {
     display: none;
   }
   .assinatura {
+    display: block;
+  }
+  .watermark {
     display: block;
   }
 }

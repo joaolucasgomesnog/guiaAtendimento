@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/ico href="/favicon.ico">
   <title>Guia de Atendimento</title>
 </head>
 
@@ -16,8 +17,7 @@
     <img src="logo.jpg" width="200px" height="auto">
     <hr>
   </header>
-
-
+  <img class="watermark" src="watermark.png">
   <div class="container">
     <p class="title is-5" style="text-align: center; padding-bottom: 50px; padding-top: 20px;">Guia de Atendimento</p>
     <div class="columns">
@@ -122,7 +122,7 @@
           <label class="label">Data:</label>
           <input class="input" id="dataInput" type="date" placeholder="Text input" style="width: 50%;">
           <label class="label">Atendente:</label>
-          <div class="control" style="display: flex; width: 100%;">
+          <div class="control" style="display: flex; gap: 10px; width: 100%;">
             <div class="select" id="atendente" style="width: 100%;">
               <select style="width: 100%;">
                 <option value="0">----SELECIONE----</option>
@@ -133,7 +133,7 @@
                 <option value="4">KAMYLA NATHALYA FEITOSA GODÊ</option>
               </select>
             </div>
-            <button class="button is-primary" style="background-color: blue;" id="imprimirButton" onclick="imprimir()">Imprimir</button>
+            <button class="button is-link" id="imprimirButton" onclick="imprimir()">Imprimir</button>
           </div>
         </div>
         
@@ -180,7 +180,7 @@
           </div>
         </div>
         <span style="display: flex; justify-content: flex-end;">
-          <button class="button is-primary is-right" onclick="adicionarContratado()">Adicionar</button>
+          <button class="button is-link is-right" onclick="adicionarContratado()">Adicionar</button>
         </span>
       </form> 
     </div>
