@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang=" ">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="valegas.css">
+  <link rel="icon" type="image/ico href="../favicon.ico">
+  <title>Vale Gas</title>
+</head>
+
+<body>
+  <header>
+    <img src="../logo.jpg" width="200px" height="auto">
+    <hr>
+  </header>
+  <div class="formulario">
+    <img class="watermark" src="../watermark.png">
+    <div class="container">
+      <p class="title is-3" id= "titulo" style="text-align: center; font-weight: bolder;">EMISSÃO DE VALE GÁS</p>
+      <p class="title is-5">Beneficário</p>
+      <div class="field">
+        <label class="label">Nome:</label>
+        <div class="control">
+          <input class="input" id="nome" type="text" placeholder="João Lucas, Vinicius...">
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">Contrato:</label>
+        <div class="control">
+          <input class="input" id="contrato" type="text" placeholder="1012">
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Plano:</label>
+        <div class="control">
+          <div class="select">
+            <select>
+              <option>UNIMAIS</option>
+              <option>UNIPLUS</option>
+              <option>UNITOTAL</option>
+              <option>UNIPRIME</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <p class="title is-5" style="padding-top: 1rem;">Emissão</p>
+      <div class="field">
+        <label class="label">Atendente:</label>
+        <div class="control" style="display: flex; gap: 10px; width: 50%;">
+          <div class="select" style="width: 100%;">
+            <select style="width: 100%;" id="atendente">
+              <option value="0">----SELECIONE----</option>
+              <option value="1">MIRELE BARBOSA</option>
+              <option value="2">LAIZE FERNANDES</option>
+              <option value="3">JAMYLLE BENEVIDES</option>
+              <option value="0">JOAO NOGUEIRA</option>
+              <option value="4">KAMYLA GODÊ</option>
+            </select>
+          </div>
+        </div>
+        <label class="label">Data:</label>
+        <input class="input" id="dataInput" type="date" placeholder="Text input" style="width: fit-content">
+        <button class="button is-link" id="imprimirButton" onclick="imprimir()">Imprimir</button>
+      </div>
+    </div>
+  </div>
+  <!-- vale gás -->
+  <div class="valegas">
+    <div class="card" style="width: 80%; height: 80%;">
+      <div class="card-image">
+        <figure class="image is-3by2">
+          <img src="../ultragas-logo.svg" alt="Placeholder image">
+        </figure>
+      </div>
+      <div class="card-content">
+        <p class="title has-text-centered">Vale Gás</p>
+            <p class="title is-4"> </p>
+            <div class="columns" style="padding-bottom: 3rem; padding-left: 0px; padding-right: 0px; ">
+              <div class="column is-2">
+                <strong>Nome:</strong>
+                <br>
+                <strong>Emissor:</strong>
+                <br>
+                
+                <strong>Data:</strong>
+                <br>
+                <strong>Hora:</strong>
+                <br>
+                <strong>Código:</strong>
+              </div>
+              <div class="column is-8" style="white-space: nowrap;">
+                <p id="nomeVale"></p>
+                <p id="emissorVale"></p>
+                <p id="dataVale"></p>
+                <p id="horaVale"></p>
+                <p id="codigo"></p>
+              </div>
+            </div>
+            <div class="content has-text-centered">
+              Cupom emitido pelo <strong> Grupo Uniplan</strong>
+            </div>
+        </div>
+    
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <footer>
+    <hr>
+    <div class="informacoes has-text-centered">
+
+      <i href></i>
+      <p> <strong> GRUPO UNIPLAN </strong><br>
+        Av. Afonso Magalhães, 800 - São Cristóvão – Serra Talhada – PE <br>
+        <i class="fa-brands fa-whatsapp"></i> (87) 9 9615.8376 | <i class="fa-solid fa-phone"></i> 0800 123 4600 <br>
+
+        www.grupouniplan.com
+      </p>
+    </div>
+    
+
+
+  </footer>
+  <script src="valegas.js"></script>
+</body>
+
+</html>
