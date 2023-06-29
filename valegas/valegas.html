@@ -14,8 +14,82 @@
 
 <body>
   <header>
-    <img src="../logo.jpg" width="200px" height="auto">
+    <nav class="navbar is-info" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="https://bulma.io">
+          <img src="../shared/logo.jpg">
+        </a>
+    
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+    
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              Guia de atendimento
+            </a>
+    
+            <div class="navbar-dropdown">
+              <a class="navbar-item">
+                Relatórios de emissão
+              </a>
+              <a class="navbar-item" href="../guia/index.html">
+                Emissão de guias
+              </a>
+            </div>
+          </div>
+
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              Vale gás
+            </a>
+    
+            <div class="navbar-dropdown">
+              <a class="navbar-item">
+                Relatórios de emissão
+              </a>
+              <a class="navbar-item" href="../valegas/valegas.html">
+                Emissão de vale
+              </a>
+            </div>
+          </div>
+
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              Aniversariantes
+            </a>
+    
+            <div class="navbar-dropdown">
+              <a class="navbar-item" href="../aniversariantes/aniversariantes.html">
+                Relatório de aniversariantes
+              </a>
+            </div>
+          </div>
+
+        </div>
+    
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="buttons">
+              <a class="button is-primary">
+                <strong>Login</strong>
+              </a>
+              <a class="button is-light">
+                Cadastro
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
     <hr>
+
   </header>
   <div class="formulario">
     <img class="watermark" src="../watermark.png">
@@ -74,7 +148,7 @@
     <div class="card" style="width: 80%; height: 80%;">
       <div class="card-image">
         <figure class="image is-3by2">
-          <img src="../ultragas-logo.svg" alt="Placeholder image">
+          <img src="../shared/ultragas-logo.svg" alt="Placeholder image">
         </figure>
       </div>
       <div class="card-content">
@@ -112,21 +186,17 @@
       </div>
     </div>
   </div>
-  <footer>
-    <hr>
-    <div class="informacoes has-text-centered">
+ 
 
-      <i href></i>
-      <p> <strong> GRUPO UNIPLAN </strong><br>
+  <footer class="footer" style="background-color: #3e8ed0; color: white; padding-top: 1rem;">
+    <div class="content has-text-centered">
+      <p> <strong style="color: white;"> GRUPO UNIPLAN </strong><br>
         Av. Afonso Magalhães, 800 - São Cristóvão – Serra Talhada – PE <br>
         <i class="fa-brands fa-whatsapp"></i> (87) 9 9615.8376 | <i class="fa-solid fa-phone"></i> 0800 123 4600 <br>
 
         www.grupouniplan.com
       </p>
     </div>
-    
-
-
   </footer>
   <script src="valegas.js"></script>
 </body>

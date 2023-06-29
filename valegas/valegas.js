@@ -10,12 +10,26 @@ function preencherVale() {
     document.querySelector('#emissorVale').innerHTML = atendente
     document.querySelector('#horaVale').innerHTML = hora
     document.querySelector('#codigo').innerHTML = `${data}${hora}`.replaceAll('/','').replaceAll(':','')
+
+    if (nome == '') {
+        window.alert('Não é possível emitir vale sem nome do cliente')
+        return false
+    }
+    if (atendente == '----SELECIONE----') {
+        window.alert('Não é possível emitir vale sem nome de um atendente')
+        return false
+    }
+    else {
+        return true
+    }
+
+
 }
 function imprimir() {
-    preencherVale()
-    botao = document.getElementById("imprimirButton")
+    if (preencherVale()) {
+        botao = document.getElementById("imprimirButton")
     window.print()
-    botao.style.visibility = ""
+    }
 }
 
 
